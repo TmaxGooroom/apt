@@ -1,0 +1,10 @@
+#! /bin/sh
+set -e
+
+if [ "$1" = 'configure' ]; then
+	# add unprivileged user for the apt methods
+	adduser --force-badname --system --home /nonexistent  \
+	    --no-create-home --quiet _apt || true
+fi
+
+#DEBHELPER#
